@@ -1,0 +1,15 @@
+import mongoose from "mongoose";
+
+const userSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    personal: String,
+    prefer: String,
+    pwd: String,
+    phone: String,
+    og: Object
+
+    
+})
+
+export const Users = mongoose.model("Users",userSchema)

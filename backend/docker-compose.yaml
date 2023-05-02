@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  mini-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./index.js:/myfolder/index.js
+      - ./swagger/users.swagger.js:/myfolder/swagger/users.swagger.js
+      - ./swagger/token.swagger.js:/myfolder/swagger/token.swagger.js
+    ports:
+      - 4000:4000   
+
+  mini-database:
+    image: mongo:5
+    ports:
+      - 27017:27017
+ 
